@@ -32,7 +32,8 @@ app.use(expressValidator());
 app.use(expressSession({
 	secret: 'kekejfrndmske',
 	resave: false,
-	saveUninitialized: false
+	saveUninitialized: false,
+	cookie: { maxAge: 1 * 60 * 60 * 1000 }
 }));
 
 /* efetua o autoload das rotas, dos models e dos controllers para o objeto app */
