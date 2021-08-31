@@ -41,8 +41,14 @@ module.exports.pergaminhos = function(application, req, res){
         res.send('Usuário precisa realizar o login');
         return;
     }
+
+    var connection = application.config.dbConnection;
+    var jogoDAO = new application.app.models.JogoDAO(connection);
+
+    var usuario = req.session.usuario;
+
+    jogoDAO.getAcoes(usuario, res);
     
-    res.render("pergaminhos");
 }
 
 module.exports.order_acao_suditos = function(application, req, res){
