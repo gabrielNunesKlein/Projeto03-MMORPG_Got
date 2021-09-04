@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+    <head>
+		<meta charset="UTF-8">
+
+		<title>MMORPG - Game of Thrones</title>
+		
+		<!-- JQuery -->
+		<script src="js/jquery-2.2.1.js"></script>
+
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+		<!-- incluindo css -->
+		<link href="css/style.css" rel="stylesheet">
+
+        <script>
+            $(document).ready(function(){
+
+                $("#btn_login").click(function(){
+                    window.location.href = '/';
+                });
+            });
+        </script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="alert alert-info">
+                <strong>Atenção, usuário cadastrado com sucesso</strong><br>
+                <button type="button" class="btn btn-info" id="btn_login">Realizar login</button>
+            </div>
+        </div>
+    </body>
+</html> 

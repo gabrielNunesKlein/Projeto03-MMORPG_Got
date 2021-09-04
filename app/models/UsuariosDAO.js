@@ -28,7 +28,6 @@ UsuarioDAO.prototype.autenticar = function(usuario, req, res){
                 console.log(result[0]);
                 
                 if(result[0] != undefined){
-
                     req.session.autorizado = true;
 
                     req.session.usuario = result[0].usuario;
@@ -38,7 +37,7 @@ UsuarioDAO.prototype.autenticar = function(usuario, req, res){
                 if(req.session.autorizado){
                     res.redirect("Jogo");
                 } else{
-                    res.render("index", {validacao: {}});
+                    res.render("index", {validacao: {}, dadosForm: usuario, msg: {msg: "usuário/senha inválidos"}});
                 }
             });
             mongoclient.close();
